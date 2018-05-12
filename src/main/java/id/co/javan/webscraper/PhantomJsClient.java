@@ -25,7 +25,7 @@ public class PhantomJsClient {
         return saveScriptLocation;
     }
 
-    String get(String url) throws Exception {
+    public String get(String url) throws Exception {
         Process process = new ProcessBuilder(phantomJsResolutionStrategy.getPath(), getSaveScriptLocation(), url).start();
         ByteArrayOutputStream processResult = new ByteArrayOutputStream();
         IOUtils.copy(process.getInputStream(), processResult);
